@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
 import LayoutPub from "../../components/LayoutPub"
 
-export default function PageTemplate({ pageContext: { language, availableLanguages }, data: { mdx } }) {
+export default function PageTemplate({ data: { mdx } }) {
 
 	return (
 		<Layout
