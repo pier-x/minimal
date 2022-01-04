@@ -1,0 +1,69 @@
+@import "../../styles/global";
+
+.card {
+
+	width: 100%;
+	display: grid;
+	grid-gap: 0.6rem;
+	grid-template-columns: 1fr;
+
+	@media print {
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.pic {
+		@media print {
+			width: 8rem;
+		}
+		text-align: center;
+		max-width: 200px;
+	}
+
+	.hoverimg {
+		@extend .hover__img;
+	}
+	&:hover .hoverimg {
+		filter: none;
+	}
+
+	&.flexible {
+		grid-template-columns: 9rem 1fr;
+		@media only screen and (min-width: $screen-small) {
+			grid-template-columns: 1fr;
+		}
+		@media print {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+
+	.name {
+		font-family: $font-heading;
+		line-height: 1.1;
+		margin-bottom: 0.3rem;
+	}
+	.org,
+	.email {
+		font-size: 0.75rem;
+		line-height: 0.75rem;
+		margin-top: 0.2rem;
+	}
+
+	&.center {
+		.pic {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.details {
+			text-align: center;
+		}
+	}
+
+	@media print {
+		.details {
+			text-align: center;
+		}
+	}
+
+}

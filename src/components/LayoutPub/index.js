@@ -1,4 +1,5 @@
 import React from "react"
+import Author from "../Author"
 import DateShareTitle from "../DateShareTitle"
 import Body from "../Body"
 import TableOfContent from "../TableOfContent"
@@ -8,7 +9,6 @@ import styles from "./styles.module.scss"
 
 export default function LayoutPub({
 	frontmatter,
-	collection,
 	date=frontmatter.date,
 	title=frontmatter.title,
 	subtitle=frontmatter.subtitle,
@@ -44,6 +44,17 @@ export default function LayoutPub({
 					tags={tags}
 				/>
 				<div className={cx("sidebar")}>
+					<div className={cx("authors")}>
+						{frontmatter.authors.map((author, i) =>
+							<div className={cx("authorCard")} key={`author${i}`}>
+								<Author
+									name={author}
+									flexible={true}
+									typesenseField={"authors"}
+								/>
+							</div>
+						)}
+					</div>
 					{!onecol && <TableOfContent title={title} />}
 				</div>
 			</div>
