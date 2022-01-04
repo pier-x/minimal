@@ -42,6 +42,7 @@
     "lodash": "^4.17.21",
     "mdx-mermaid": "^1.1.1",
     "mdx-utils": "^0.2.0",
+    "plotly.js": "^2.8.3",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.25.0",
     "react": "^17.0.1",
