@@ -1,0 +1,72 @@
+@import "../../styles/global";
+
+.toc {
+	display: none;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+	@media only screen and (min-width: $screen-mid) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+		display: block;
+	}
+  box-sizing: border-box;
+	position: sticky;
+	top: 2rem;
+	align-self: start;
+	width: 100%;
+  max-height: calc(100vh - 4rem);
+	// height: 100vh;
+	// left: $content-width + 2*$content-margin-width;
+	font-family: $font-heading;
+	font-size: 0.8rem;
+  a {
+    @extend .hover__color__primary;
+  }
+
+  @for $i from 2 through 6 {
+    .toc#{$i} {
+      padding: 4px 0;
+      padding-left: 10px*($i - 1);
+      // border-left: 1px solid;
+      // border-left-color: $primary-color;
+      position: relative;
+      > a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 1px;
+        background-color: $primary-color;
+        transition-duration: $duration-short;
+      }
+      &:hover {
+        // border-left-color: $secondary-color;
+        // border-left-width: 5px;
+        // padding-left: 10px*($i) - 4px;
+        > a::before {
+          width: 5px;
+        }
+      }
+      transition-duration: $duration-short;
+    }
+  }
+
+  .yay a {
+    color: $secondary-color;
+    &::before {
+      background-color: $secondary-color;
+      width: 5px;
+    }
+  }
+
+  .toc0 {
+    font-weight: bold;
+  }
+
+}

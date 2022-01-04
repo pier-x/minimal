@@ -1,0 +1,84 @@
+$language-nicknames: (
+	javascript: js,
+	json5: json,
+	visual-basic: vb,
+	markdown: md,
+);
+
+$language-colors: (
+	js: #f7df1e,
+	jsx: #61dafb,
+	ts: #61dafb,
+	tsx: #61dafb,
+	html: #005a9c,
+	xml: #005a9c,
+	svg: #005a9c,
+	css: #ff9800,
+	mdx: #f9ac00,
+	py: #F8CF42,
+	vb: #0F793F,
+	text: #aaa,
+	shell: #aaa,
+	sh: #aaa,
+	bash: #aaa,
+	yaml: #ffa8df,
+	yml: #ffa8df,
+	md: #aaa,
+	diff: #e6ffed,
+	GraphQL: #E10098,
+	json: linen,
+	csv: #aaa,
+);
+
+.react-live-container::before,
+.gatsby-highlight pre[class*="language-"]::before {
+  background: black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  color: white;
+  font-size: $code-size * 0.75;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0;
+}
+
+.react-live-container::before {
+	content: "jsx";
+	background: map-get($language-colors, "jsx");
+	@if lightness(map-get($language-colors, "jsx")) > 50% {
+		color: black;
+	}
+	@else {
+		color: white;
+	}
+}
+
+@each $lang, $color in $language-colors {
+	$tmp: to-lower-case($lang);
+	.gatsby-highlight pre[class*="language-#{$tmp}"]::before {
+		content: "#{$lang}";
+		background: $color;
+		@if lightness($color) > 50% {
+			color: black;
+		}
+		@else {
+			color: white;
+		}
+	}
+}
+
+@each $lang, $langnick in $language-nicknames {
+	.gatsby-highlight pre[class*="language-#{$lang}"]::before {
+		content: "#{$langnick}";
+		background: map-get($language-colors, $langnick);
+		@if lightness(map-get($language-colors, $langnick)) > 50% {
+			color: black;
+		}
+		@else {
+			color: white;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+@import "../../styles/global";
+
+.grid {
+
+	@media only screen and (min-width: $screen-mid) {
+		display: flex;
+		gap: $grid-gap;
+		> div:nth-child(1) {
+			flex: 1 1 78%;
+		}
+		> div:nth-child(2) {
+			flex: 1 1 22%;
+		}
+	}
+	margin-top: 1.5rem;
+
+	.authors {
+		// margin: 0 -$body-padding-min/2;
+		// @media only screen and (min-width: $screen-mid) {
+		// 	margin: 0;
+		// }
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr;
+		margin-top: 2rem;
+		@media print, (min-width: $screen-small) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@media only screen and (min-width: $screen-small) {
+		}
+		@media print {
+			justify-items: center;
+		}
+		@media only screen and (min-width: $screen-mid) {
+			grid-template-columns: 1fr;
+			margin-top: 0;
+		}
+	}
+
+	&.onecol {
+		display: block;
+		// grid-template-columns: 1fr;
+		// grid-gap: 0;
+		.authors {
+			margin-top: 2rem;
+			@media print, (min-width: $screen-small) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+			@media print {
+				justify-items: center;
+			}
+		}
+	}
+
+	.author-card {
+		// margin: 0 $body-padding-min/2;
+		@media only screen and (min-width: $screen-mid) {
+			margin: 0;
+			width: 100%;
+			max-width: 200px;
+		}
+	}
+
+}

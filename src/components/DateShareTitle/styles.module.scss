@@ -1,0 +1,39 @@
+@import "../../styles/global";
+
+.datesharetitle {
+	margin-bottom: 2.4rem;
+}
+
+.top {
+
+	display: flex;
+	margin-top: -1.2rem;
+	
+	.share {
+		margin-left: auto;
+	}
+
+}
+
+.title {
+
+	font-weight: normal;
+	font-family: $font-heading;
+	font-size: $title-size;
+	line-height: 2.4rem;
+	margin-top: 1.2rem;
+	margin-bottom: 0.6rem;
+
+	&.series {
+		font-size: 1.2rem;
+		line-height: 1.4rem;
+		color: $secondary-color;
+		margin-bottom: -1rem;
+	}
+
+	&.subtitle {
+		font-size: 1.2rem;
+		line-height: 1.4rem;
+	}
+
+}

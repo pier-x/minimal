@@ -1,0 +1,42 @@
+$body-width: 1000px;
+$body-padding: 60px;
+$body-padding-min: 25px;
+$body-padding-max: 60px;
+$content-width-max: $body-width - (2*$body-padding-max); // 880
+
+$screen-xsmall: 450px;
+$screen-small: 550px;
+$screen-mid: 700px;
+$screen-large: $content-width-max + 2*$body-padding-min; // 880 + 40 = 920
+$screen-xlarge: $body-width;
+$screen-xxlarge: $body-width + 2*30px; // 1060
+
+$primary-color: #4e6c7f; // 4f6e82; //rgb(59, 95, 116); <= 3b5f74
+$secondary-color: #dd8357; // rgb(212, 104, 68); <= d46844
+$color-3: rgb(218, 213, 207);
+$color-4: rgb(165, 185, 196);
+$green-color: rgb(53, 147, 159);
+$background-color: #e5e5e5;
+$background-darker-color: #dadada;
+$footer-color: #c8ced7;
+$grey-color: scale-color(black, $lightness: 30%);
+$text-color: rgba(black, 0.87);
+$lightgrey-color: #8e8e8e;
+$gridline-color: scale-color(black, $lightness: 90%);
+$font-body: "Muttayat";
+$font-heading: "Dindan";
+
+:export {
+	primaryColor: $primary-color;
+	secondaryColor: $secondary-color;
+	thirdColor: $color-3;
+	fourthColor: $color-4;
+	greyColor: $grey-color;
+	greenColor: $green-color;
+	lightgreyColor: $lightgrey-color;
+	gridlineColor: $gridline-color;
+	zerolineColor: $grey-color;
+	textColor: $text-color;
+	bodyFont: $font-body;
+	headingFont: $font-heading;
+}

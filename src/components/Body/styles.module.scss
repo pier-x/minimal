@@ -1,0 +1,61 @@
+@import "../../styles/global";
+
+
+.body {
+
+	// remove overflows since we've dealt with it with break-word below
+	// overflow-x: hidden;
+	// overflow-y: hidden;
+	// @media only screen and (min-width: $screen-mid) {
+	// 	overflow-x: visible;
+	// }
+
+	word-break: break-word;
+		
+	> :first-child,
+	> :first-child > :first-child,
+	> :first-child > :first-child > :first-child {
+		margin-top: 0
+	}
+
+	> :global(#mdx-body):first-child > :first-child :global(.anchor-t) + h2 {
+		margin-top: 0;
+	}
+	
+	.cover {
+		margin-bottom: 1.5rem;
+	}
+
+	:global(.csl-entry) {
+		padding-left: 2rem;
+		text-indent: -2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.endmatter {
+		margin-top: 3rem;
+		.section {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin-bottom: 1rem;
+			&.indent {
+				padding-left: 2rem;
+				text-indent: -2rem;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.header {
+			font-family: $font-heading;
+			font-weight: bold;
+		}
+		// .share {
+		// 	@media only screen and (min-width: $screen-xxlarge) {
+		// 		display: none;
+		// 	}
+		// }
+	}
+
+}

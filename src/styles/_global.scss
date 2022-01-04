@@ -1,0 +1,113 @@
+@import "variables.module";
+
+// @debug math.abs(10px);
+// @mixin autosize($key, $property) {
+// 	#{$key}: math.round($property * 0.9);
+// 	@media only screen and (min-width: $screen-xlarge) {
+// 		#{$key}: $property;
+// 	}
+// }
+
+$grid-gap: 2.5rem;
+$title-size: 2rem;
+$bar-height: 1.5rem;
+
+$duration-short: 0.2s;
+$duration-long: 0.5s;
+
+.hover__background__primary {
+	background-color: $primary-color;
+	&:hover {
+		background-color: scale-color($primary-color, $lightness: +20%)
+	}
+}
+
+.hover__background__lightgrey {
+	background-color: $lightgrey-color;
+	&:hover {
+		background-color: scale-color($lightgrey-color, $lightness: +20%)
+	}
+}
+
+.hover__color__primary {
+	color: $primary-color;
+	&:hover {
+		color: scale-color($primary-color, $lightness: 20%);
+	}
+	transition: color $duration-short;
+}
+
+.hover__color__white {
+	color: white;
+	&:hover {
+		color: scale-color($secondary-color, $lightness: 40%);
+	}
+	transition: color $duration-short;
+}
+
+.hover__color__primary__bright {
+	color: scale-color($primary-color, $saturation: 60%);
+	&:hover {
+		color: scale-color($primary-color, $lightness: 20%, $saturation: 60%);
+	}
+	transition: color $duration-short;
+}
+
+.hover__color__secondary {
+	color: $secondary-color;
+	&:hover {
+		color: scale-color($secondary-color, $lightness: 20%);
+	}
+	transition: color $duration-short;
+}
+
+.hover__color__grey {
+	color: $grey-color;
+	&:hover {
+		color: scale-color($grey-color, $lightness: -20%);
+	}
+	transition: color $duration-short;
+}
+
+.hover__color__text {
+	color: $text-color;
+	&:hover {
+		color: scale-color($text-color, $alpha: -20%);
+	}
+	transition: color $duration-short;
+}
+
+.hover__img {
+	filter: grayscale(30%) brightness(105%);
+	transition-duration: $duration-short;
+}
+
+.orange {
+	color: $secondary-color;
+}
+
+.hidden {
+	display: none;
+}
+
+.nobreak {
+	display: inline-block;
+}
+
+.date {
+	font-family: $font-heading;
+	font-size: 0.9rem;
+	color: $primary-color;
+}
+
+$shadow: 0 0 3rem rgba(black, 0.2), 0 0 0.3rem rgba(black, 0.2);
+$shadow-small: 0 0.3rem 0.8rem rgba(black, 0.1);
+
+.h2__style {
+	font-family: $font-heading;
+	font-size: 2rem;
+	line-height: 1.2;
+	margin-top: 1.2*2rem;
+	margin-bottom: 0.8*2rem;
+	color: $primary-color;
+}

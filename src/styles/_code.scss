@@ -1,0 +1,149 @@
+@import "variables.module";
+
+$code-bkg-color: #fafae8; //#f9f8f4;
+$code-selection-color: scale-color($code-bkg-color, $lightness: -15%);
+$code-text-color: #403f53;
+$code-highlight-color: #f2ebd2;
+$code-highlight-border-color: #ead181;
+
+$code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$code-size: 0.9rem;
+$code-sidemargin: 0.75rem;
+
+.code-base {
+  background: $code-bkg-color;
+  font-family: $code-font;
+  font-size: $code-size;
+  @media only screen and (min-width: $screen-large) {
+    font-size: $code-size * 0.9;
+  }
+}
+
+.code-base-color {
+  color: $code-text-color;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  @extend .code-base;
+  @extend .code-base-color;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  text-shadow: none;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  &::selection,
+  & ::selection {
+    text-shadow: none;
+    background: $code-selection-color;
+  }
+
+  margin: 0;
+  overflow: auto;
+
+  // padding: 1rem 0;
+  padding: 1.25rem $code-sidemargin;
+  border-radius: 0.5rem;
+
+}
+
+@import "nightowl-light";
+
+.gatsby-highlight {
+  position: relative;
+}
+
+.prism-code {
+  -webkit-overflow-scrolling: touch;
+  background-color: transparent;
+  &::-webkit-scrollbar {
+    height: 14px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 80px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: scale-color($code-highlight-color, $alpha: 0%);
+    border: 4px solid $code-bkg-color;
+    border-radius: 80px;
+  }
+  display: grid;
+}
+
+// inline code
+p > code,
+li > code {
+  @extend .code-base;
+  @extend .code-base-color;
+  padding: 0.4em 0.3rem;
+  border-radius: 0.3rem;
+}
+
+a > code {
+  @extend .code-base;
+  padding: 0.4em 0.3rem;
+  border-radius: 0.3rem;
+}
+
+// line number
+
+.line-number-style {
+  display: inline-block;
+  margin-left: -$code-sidemargin;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 1.2em;
+  user-select: none;
+  opacity: 0.3;
+  text-align: center;
+  position: relative;
+}
+
+// highlights
+
+.highlight-line {
+  margin-left: -$code-sidemargin;
+  margin-right: -$code-sidemargin;
+  padding-left: $code-sidemargin;
+  padding-right: $code-sidemargin;
+  background: $code-highlight-color;
+  border-left: 4px solid $code-highlight-border-color;
+}
+
+.highlight-line .line-number-style {
+  opacity: 0.5;
+  width: calc(1.2em - 4px);
+  left: -2px;
+}
+
+.code-title {
+  background: $code-highlight-color;
+  padding: 0.25rem $code-sidemargin;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: $code-font;
+  font-size: $code-size;
+}
+
+.code-title + .gatsby-highlight pre[class*="language-"] {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.token-line {
+  margin-right: -$code-sidemargin;
+  padding-right: $code-sidemargin;
+}
+
+@import "language-tags"
