@@ -73,7 +73,6 @@ module.exports = {
 					require("remark-external-links"),
 					require('remark-math'),
 					require('remark-html-katex'),
-					require('mdx-mermaid'),
 				],
       }
     },

@@ -1,45 +1,15 @@
 import React from "react"
 import { use100vh } from "react-div-100vh"
 import { MDXProvider } from "@mdx-js/react"
-import { LazyChartjs } from '../Plots'
 import Link from "gatsby"
-import ReactPlayer from 'react-player/lazy'
 import Code from "../Code"
 import { preToCodeBlock } from "mdx-utils"
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import styles from '../../styles/_variables.module.scss'
 
 import "./styles.scss"
 
 const mdxComponents = {
-  ReactPlayer: props =>
-    <div
-      className="playerWrapper"
-      style={{
-        position: "relative",
-        paddingTop: `min(${props.height / props.width * 100}%, ${props.height}px)`,
-        width: `${props.width}px`,
-        maxWidth: "100%",
-        marginLeft: "auto",
-        marginRight: "auto",
-      }}
-    >
-      <ReactPlayer
-        url={props.url}
-        {...props}
-        style={{
-          position: "absolute",
-          top: "0",
-          left: "0",
-          height: `${props.height}px`,
-          maxHeight: "100%",
-          width: "100%",
-        }}
-        height="100%"
-        width="100%"
-      />
-    </div>,
   pre: preProps => {
 		const props = preToCodeBlock(preProps)
 		let mode = ""
@@ -79,9 +49,6 @@ export default function Layout({
 
 	let components = {
 		...mdxComponents,
-		// LazyPlotly,
-		// LazyHighcharts,
-		LazyChartjs,
 		Link,
 	}
 
@@ -112,39 +79,23 @@ export default function Layout({
 		}
   }, [])
 
-  const theme = createTheme({
-	  palette: {
-	    primary: {
-	      main: styles.primaryColor,
-	    },
-	    secondary: {
-	      main: styles.secondaryColor,
-	    },
-	  },
-	  typography: {
-	  	fontFamily: "Dindan",
-	  },
-	})
-
 	return (
 		<React.Fragment>
-			<ThemeProvider theme={theme}>
-				<div id="main" style={{minHeight: fullHeight}}>
-					<div id="menu-leek">
-						<div id="body">
-							<MDXProvider components={components}>
-								<div className="layout-content" id="layout-content">
-									<div className="flex-padding">
-										<div className="content">
-											{children}
-										</div>
+			<div id="main" style={{minHeight: fullHeight}}>
+				<div id="menu-leek">
+					<div id="body">
+						<MDXProvider components={components}>
+							<div className="layout-content" id="layout-content">
+								<div className="flex-padding">
+									<div className="content">
+										{children}
 									</div>
 								</div>
-							</MDXProvider>
-						</div>
+							</div>
+						</MDXProvider>
 					</div>
 				</div>
-			</ThemeProvider>
+			</div>
 		</React.Fragment>
   );
 }
