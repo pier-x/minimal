@@ -1,7 +1,7 @@
 import React from "react"
 import { use100vh } from "react-div-100vh"
 import { MDXProvider } from "@mdx-js/react"
-import { LazyPlotly, LazyHighcharts, LazyChartjs } from '../Plots'
+import { LazyChartjs } from '../Plots'
 import Link from "gatsby"
 import ReactPlayer from 'react-player/lazy'
 import Code from "../Code"
@@ -79,8 +79,8 @@ export default function Layout({
 
 	let components = {
 		...mdxComponents,
-		LazyPlotly,
-		LazyHighcharts,
+		// LazyPlotly,
+		// LazyHighcharts,
 		LazyChartjs,
 		Link,
 	}

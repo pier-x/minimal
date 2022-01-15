@@ -1,5 +1,3 @@
-import { chart } from 'highcharts'
-import { defaults } from 'lodash'
 import React from 'react'
 import { LazyChartjs, defaultStyles } from '../../src/components/Plots'
 

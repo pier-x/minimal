@@ -1,6 +1,6 @@
 import React from 'react'
-import { LazyPlotly as LazyPlotlyComponent } from './Plotly.js'
-import { LazyHighcharts as LazyHighchartsComponent } from './Highcharts.js'
+// import { LazyPlotly as LazyPlotlyComponent } from './Plotly.js'
+// import { LazyHighcharts as LazyHighchartsComponent } from './Highcharts.js'
 import { LazyChartjs as LazyChartjsComponent } from './Chartjs.js'
 import chroma from 'chroma-js'
 
@@ -67,14 +67,14 @@ export function getAreaColor(color, multiplier) {
   return convertSingleColor(color, multiplier)
 }
 
-export function LazyPlotly(props) {
-  return(
-    <LazyPlotlyComponent
-      defaultStyles={defaultStyles}
-      {...props}
-    />
-  )
-}
+// export function LazyPlotly(props) {
+//   return(
+//     <LazyPlotlyComponent
+//       defaultStyles={defaultStyles}
+//       {...props}
+//     />
+//   )
+// }
 
 export function LazyChartjs(props) {
   return(
@@ -85,14 +85,14 @@ export function LazyChartjs(props) {
   )
 }
 
-export function LazyHighcharts(props) {
-  return(
-    <LazyHighchartsComponent
-      defaultStyles={defaultStyles}
-      {...props}
-    />
-  )
-}
+// export function LazyHighcharts(props) {
+//   return(
+//     <LazyHighchartsComponent
+//       defaultStyles={defaultStyles}
+//       {...props}
+//     />
+//   )
+// }
 
 
 // export * from './Plotly.js'
